@@ -1,0 +1,16 @@
+
+# OFA stuff
+OFA/
+OFA*/
+
+# models
+*.pth
+
+# other files
+*.zip
+
+# virtualenv
+venv/
+
+# python cache
+__pycache__/
