@@ -18,7 +18,7 @@ Install requirements
 ```bash
 pip install -r requirements
 ```
-Install [OFA](https://github.com/OFA-Sys/OFA/blob/feature/add_transformers/transformers.md)
+Install the VL model [OFA](https://github.com/OFA-Sys/OFA/blob/feature/add_transformers/transformers.md)
 
 ### Download the models
 
