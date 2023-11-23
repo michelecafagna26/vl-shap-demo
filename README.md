@@ -34,7 +34,7 @@ wget https://owncloud.gwdg.de/index.php/s/ioHbRzFx6th32hn/download -O weights.zi
 unzip -d . -j weights.zip
 ```
 
-## Run it in local
+## Run it locally
 
 ```bash
 gradio app.py
