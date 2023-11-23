@@ -60,15 +60,6 @@ class ModelWrapper(nn.Module):
 
         return self.tokenizer.batch_decode(out_ids, skip_special_tokens=True)[0]
 
-
-def build_model(query, ckpt_dir, device="cpu"):
-    # load the model
-    model = OFAModel.from_pretrained(ckpt_dir, use_cache=False).to(device)
-    tokenizer = OFATokenizer.from_pretrained(ckpt_dir)
-    model_wrapper = ModelWrapper(model, tokenizer, query, resolution=IMG_SIZE, device=device)
-
-    return model_wrapper
-
 def get_num_samples(num_features, sampling_space):
 
     num_samples = int(2 ** (num_features-1) * sampling_space / 100)
