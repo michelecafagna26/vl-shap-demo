@@ -8,7 +8,7 @@ Demo for the paper: *["Interpreting Vision and Language Generative Models with S
 
 Clone this repo:
 ```bash
-git clone ...
+git clone https://github.com/michelecafagna26/vl-shap-demo.git
 ```
 Install VL-SHAP
 ```bash
