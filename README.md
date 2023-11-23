@@ -10,7 +10,7 @@ Clone this repo:
 ```bash
 git clone https://github.com/michelecafagna26/vl-shap-demo.git
 ```
-Install VL-SHAP:
+Install VL-SHAP (Clipseg branch):
 ```bash
 pip install git+https://github.com/michelecafagna26/vl-shap.git@adding_clipseg#egg=semshap
 ```
