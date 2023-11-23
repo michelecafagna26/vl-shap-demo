@@ -10,15 +10,15 @@ Clone this repo:
 ```bash
 git clone https://github.com/michelecafagna26/vl-shap-demo.git
 ```
-Install VL-SHAP
+Install VL-SHAP:
 ```bash
 pip install git+https://github.com/michelecafagna26/vl-shap.git@adding_clipseg#egg=semshap
 ```
-Install requirements
+Install requirements:
 ```bash
 pip install -r requirements
 ```
-Install the VL model [OFA](https://github.com/OFA-Sys/OFA/blob/feature/add_transformers/transformers.md)
+Install the VL model [OFA](https://github.com/OFA-Sys/OFA/blob/feature/add_transformers/transformers.md):
 
 ### Download the models
 
