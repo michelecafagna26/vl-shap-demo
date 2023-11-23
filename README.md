@@ -8,7 +8,7 @@ Demo for the paper: *["Interpreting Vision and Language Generative Models with S
 
 Clone this repo:
 ```bash
-git clone ...
+git clone https://github.com/michelecafagna26/vl-shap-demo.git
 ```
 Install VL-SHAP
 ```bash
@@ -34,7 +34,7 @@ wget https://owncloud.gwdg.de/index.php/s/ioHbRzFx6th32hn/download -O weights.zi
 unzip -d . -j weights.zip
 ```
 
-## Run it in local
+## Run it locally
 
 ```bash
 gradio app.py
