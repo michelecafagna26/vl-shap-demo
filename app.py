@@ -13,7 +13,6 @@ from semshap.explainers import BaseExplainer
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 IMG_SIZE = (512, 512)
-SEMANTIC_SEG_MODEL = "./rd64-uni.pth"
 
 
 class Singleton(type):
@@ -161,7 +160,7 @@ def explain_semantic_seg(img, query, ckpt_dir, sampling_space, prompts):
     ])
 
     # generate semantic masks
-    out = generate_segmentation_masks(img, prompts, img_size=IMG_SIZE, model_path=SEMANTIC_SEG_MODEL)
+    out = generate_segmentation_masks(img, prompts, img_size=IMG_SIZE)
 
     # compute the number of samples
     num_features = len(out['masks'])
@@ -266,4 +265,5 @@ with gr.Blocks() as demo:
                                   api_name="explain")
 
 if __name__ == "__main__":
-    demo.launch(show_api=False)
+
+    demo.launch(show_api=False, server_name="0.0.0.0")
