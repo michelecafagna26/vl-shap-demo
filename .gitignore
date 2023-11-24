@@ -3,8 +3,8 @@
 OFA/
 OFA*/
 
-# models
-*.pth
+# scripts
+*.sh
 
 # other files
 *.zip
