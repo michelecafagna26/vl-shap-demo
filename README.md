@@ -28,12 +28,6 @@ git clone https://huggingface.co/OFA-Sys/OFA-tiny
 git clone https://huggingface.co/OFA-Sys/OFA-base
 ```
 
-Clipseg segmentation model
-```bash
-wget https://owncloud.gwdg.de/index.php/s/ioHbRzFx6th32hn/download -O weights.zip
-unzip -d . -j weights.zip
-```
-
 ## Run it locally
 
 ```bash
