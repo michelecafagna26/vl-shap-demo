@@ -28,7 +28,7 @@ sudo docker run --runtime=nvidia --gpus all -p 7860:7860 vl-shap-demo
 
 ### Installation
 
-Make sure to have ```git``` and ```git lfs``` installed.
+Make sure to have ```git lfs``` installed.
 
 Clone this repo:
 ```bash
