@@ -4,7 +4,25 @@ Gradio Demo for the paper: *["Interpreting Vision and Language Generative Models
 
 ---
 
-## Installation
+## Run it with Docker (recommended)
+
+Make sure to have **nvidia-docker runtime** installed.
+Build the docker image:
+
+```bash
+docker build . -t vl-shap-demo
+```
+
+Run:
+```bash
+sudo docker run --runtime=nvidia --gpus all -p 7860:7860 vl-shap-demo
+```
+
+## Run it locally
+
+### Installation
+
+Make sure to have ```git``` and ```git lfs``` installed.
 
 Clone this repo:
 ```bash
@@ -28,14 +46,14 @@ git clone https://huggingface.co/OFA-Sys/OFA-tiny
 git clone https://huggingface.co/OFA-Sys/OFA-base
 ```
 
-## Run it locally
+### Run the gradio server
 
 ```bash
 gradio app.py
 ```
 
 ## Hardware Requirements
-**The use of a GPU is strongly advised.**
+**The use of a GPU is strongly recommended.**
 Depending on VL-SHAP specific method parameters, it can requires from a few seconds to a few minutes to generate and explanation on a GPU.
 This obviously depends also on the model you want to explain. For this reason the demo is currently limited to OFA-base and OFA-tiny.
 
