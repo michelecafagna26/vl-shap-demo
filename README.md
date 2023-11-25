@@ -7,6 +7,12 @@ Gradio Demo for the paper: *["Interpreting Vision and Language Generative Models
 ## Run it with Docker (recommended)
 
 Make sure to have **nvidia-docker runtime** installed.
+
+Clone this repo:
+```bash
+git clone https://github.com/michelecafagna26/vl-shap-demo.git
+```
+
 Build the docker image:
 
 ```bash
