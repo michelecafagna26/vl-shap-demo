@@ -45,7 +45,7 @@ pip install git+https://github.com/michelecafagna26/vl-shap.git@adding_clipseg#e
 ```
 Install requirements:
 ```bash
-pip install -r requirements
+pip install -r requirements.txt
 ```
 Install the VL model [OFA](https://github.com/OFA-Sys/OFA/blob/feature/add_transformers/transformers.md):
 
