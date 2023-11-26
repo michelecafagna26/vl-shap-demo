@@ -28,6 +28,7 @@ Run:
 ```bash
 sudo docker run --runtime=nvidia --gpus all -p 7860:7860 vl-shap-demo
 ```
+Go to ```http://0.0.0.0:7860``` from your browser play 🎮 with the demo.
 
 ## Run it locally
 
@@ -49,7 +50,7 @@ pip install -r requirements.txt
 ```
 Install the VL model [OFA](https://github.com/OFA-Sys/OFA/blob/feature/add_transformers/transformers.md):
 
-### Download the models
+### Download the models to explain
 
 OFA models
 ```bash
