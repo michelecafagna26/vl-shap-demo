@@ -1,3 +1,4 @@
+from pathlib import Path
 import gradio as gr
 from PIL import Image
 import numpy as np
@@ -201,7 +202,7 @@ with gr.Blocks() as demo:
             generate_btn.click(fn=generate, inputs=[input_image, input_text, ckpt_dir], outputs=[model_output],
                                api_name="explain")
 
-        # Explanation 5
+        # Explanation
         MIN_SPACE = 5
         MAX_SPACE = 100
         STEP = 1
@@ -263,6 +264,14 @@ with gr.Blocks() as demo:
                 explain_btn.click(fn=explain_semantic_seg, inputs=[input_image, model_output, ckpt_dir, sampling_space, prompts],
                                   outputs=explanation,
                                   api_name="explain")
+    with gr.Row():
+        with gr.Column():
+            gr.Markdown("## Image-Question Examples")
+            gr.Examples(
+                examples=[[Path(Path(__file__).parent, "examples/moto1.jpg"), "What is the subject doing?", "OFA-tiny"]],
+                inputs=[input_image, input_text, ckpt_dir]
+            )
+
 
 if __name__ == "__main__":
 
