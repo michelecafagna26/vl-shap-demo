@@ -28,7 +28,7 @@ Run:
 ```bash
 sudo docker run --runtime=nvidia --gpus all -p 7860:7860 vl-shap-demo
 ```
-Go to ```http://0.0.0.0:7860``` from your browser play 🎮 with the demo.
+Go to ```http://0.0.0.0:7860``` from your browser to play 🎮 with the demo.
 
 ## Run it locally
 
