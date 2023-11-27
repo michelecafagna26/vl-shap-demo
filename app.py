@@ -192,9 +192,9 @@ with gr.Blocks() as demo:
         with gr.Column():
             with gr.Group("Inputs"):
                 ckpt_dir = gr.Dropdown(
-                    ["OFA-tiny", "OFA-base"], label="Choose the Model", info="Select the model to use", value="OFA-tiny")
+                    ["OFA-tiny", "OFA-base","OFA-large"], label="Choose the Model", info="Select the model to use", value="OFA-tiny")
                 input_image = gr.Image(label="Upload an image", type='pil')
-                input_text = gr.Textbox(label="Ask a question", placeholder="Ask a question...",
+                input_text = gr.Textbox(label="Prompt", placeholder="e.g. Describe the picture",
                                         value="What is the subject doing?")
 
             model_output = gr.Textbox(label="Model Output", interactive=False)
@@ -208,8 +208,11 @@ with gr.Blocks() as demo:
         STEP = 1
         with gr.Tab("Deep Feature Factorization Features"):
             with gr.Column():
+                gr.Markdown("Deep Feature factorization extracts visual priors form the VL model's final layer activations. it use them as "
+                            "input features for the SHAP game. Thus. The explanation is based on the visual information the model is "
+                            "actually paying attention to. This method can be used only with CNN- and ViT-based visualbackbones.")
                 sampling_space = gr.Slider(MIN_SPACE, MAX_SPACE, interactive=True, value=50, step=STEP,
-                                        label="Sampling Size",
+                                        label="% of sample space to cover",
                                         info=f"Choose between {MIN_SPACE}% and {MAX_SPACE}%")
                 explanation = gr.Image(label="SHAP Explanation", type='pil')
 
@@ -219,6 +222,9 @@ with gr.Blocks() as demo:
 
         with gr.Tab("Superpixel Features"):
             with gr.Column():
+                gr.Markdown(
+                    "Superpixel simply splits the image into squared patches and use them as input features the SHAP "
+                    "game. This method is the simplest, but does not exploit any visual semantic information but is totally model agnostic")
                 with gr.Group("Grid shape"):
                     MIN_ROWS = MIN_COLS = 2
                     MAX_ROWS = MAX_COLS = 4
@@ -234,7 +240,7 @@ with gr.Blocks() as demo:
 
 
                 sample_space = gr.Slider(MIN_SPACE, MAX_SPACE, interactive=True, value=50, step=STEP,
-                                        label="% of sampling size",
+                                        label="% of sample space to cover",
                                         info=f"Choose between {MIN_SPACE}% and {MAX_SPACE}%")
 
                 explanation = gr.Image(label="SHAP Explanation", type='pil')
@@ -246,15 +252,19 @@ with gr.Blocks() as demo:
 
         with gr.Tab(" Semantic Segmentation Features"):
             with gr.Column():
+                gr.Markdown(
+                    "Here we use an external segmentation model, namely Clipseg, to extract input features based on "
+                    "the visual semantics. By specifying a list of words, we help Clipseg identifying semantic masks. "
+                    "This method is totally model-agnostic.")
                 with gr.Group("Grid shape"):
                     sampling_space = gr.Slider(MIN_SPACE, MAX_SPACE, interactive=True, value=50, step=STEP,
-                                               label="Sampling Size",
+                                               label="% of sample space to cover",
                                                info=f"Choose between {MIN_SPACE}% and {MAX_SPACE}%")
                     prompts = gr.Textbox(label="Prompt", placeholder="person,bike,sky", info="Specify the name of 3 "
                                                                                              "to 7 objects or "
                                                                                              "entities visible in the "
                                                                                              "image divided by a comma. These will be "
-                                                                                             "use to extract "
+                                                                                             "used to extract "
                                                                                              "semantically relevant "
                                                                                              "regions")
 
@@ -268,7 +278,9 @@ with gr.Blocks() as demo:
         with gr.Column():
             gr.Markdown("## Image-Question Examples")
             gr.Examples(
-                examples=[[Path(Path(__file__).parent, "examples/moto1.jpg"), "What is the subject doing?", "OFA-tiny"]],
+                examples=[[Path(Path(__file__).parent, "examples/moto1.jpg"), "What is the subject doing?", "OFA-tiny"],
+                          [Path(Path(__file__).parent, "examples/463125731_46041095c3_z.jpg"), "Describe this picture", "OFA-large"]],
+
                 inputs=[input_image, input_text, ckpt_dir]
             )
 

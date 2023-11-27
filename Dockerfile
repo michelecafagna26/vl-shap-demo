@@ -27,7 +27,8 @@ RUN cd /app \
     && git clone --single-branch --branch feature/add_transformers https://github.com/OFA-Sys/OFA.git \
     && pip install OFA/transformers/ \
     && git clone https://huggingface.co/OFA-Sys/OFA-tiny \
-    && git clone https://huggingface.co/OFA-Sys/OFA-base
+    && git clone https://huggingface.co/OFA-Sys/OFA-base \
+    && git clone https://huggingface.co/OFA-Sys/OFA-large
 
 EXPOSE 7860
 

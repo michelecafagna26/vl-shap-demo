@@ -55,6 +55,7 @@ OFA models
 ```bash
 git clone https://huggingface.co/OFA-Sys/OFA-tiny 
 git clone https://huggingface.co/OFA-Sys/OFA-base
+git clone https://huggingface.co/OFA-Sys/OFA-large
 ```
 
 ### Run the gradio server
@@ -62,6 +63,8 @@ git clone https://huggingface.co/OFA-Sys/OFA-base
 ```bash
 gradio app.py
 ```
+## Note ⚠️
+The visual explanation generation may take a while. Check out the logs check the progress of the algorithm.
 
 ## Hardware Requirements
 **The use of a GPU is strongly recommended.**
