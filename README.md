@@ -65,7 +65,7 @@ git clone https://huggingface.co/OFA-Sys/OFA-large
 gradio app.py
 ```
 ## Note ⚠️
-The visual explanation generation may take a while. Check out the logs check the progress of the algorithm.
+The visual explanation generation may take a while. Check the logs to keep track of the progress.
 
 ## Hardware Requirements
 **The use of a GPU is strongly recommended.**
