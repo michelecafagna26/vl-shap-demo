@@ -28,6 +28,7 @@ Run:
 ```bash
 sudo docker run --runtime=nvidia --gpus all -p 7860:7860 vl-shap-demo
 ```
+Go to ```http://0.0.0.0:7860``` from your browser to play 🎮 with the demo.
 
 ## Run it locally
 
@@ -49,7 +50,7 @@ pip install -r requirements.txt
 ```
 Install the VL model [OFA](https://github.com/OFA-Sys/OFA/blob/feature/add_transformers/transformers.md):
 
-### Download the models
+### Download the models to explain
 
 OFA models
 ```bash
@@ -68,7 +69,7 @@ The visual explanation generation may take a while. Check out the logs check the
 
 ## Hardware Requirements
 **The use of a GPU is strongly recommended.**
-Depending on VL-SHAP specific method parameters, it can requires from a few seconds to a few minutes to generate and explanation on a GPU.
+Depending on VL-SHAP parameters and visual feature extraction method, it can require from a few seconds to a few minutes to generate and explanation on a GPU.
 This obviously depends also on the model you want to explain. For this reason the demo is currently limited to OFA-base and OFA-tiny.
 
 
