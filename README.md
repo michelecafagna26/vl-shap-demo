@@ -1,5 +1,7 @@
 # VL-SHAP Demo
 
+![vl-shap-demo](vl-shap-demo.gif)
+
 🚀 Gradio Demo for the paper: *["Interpreting Vision and Language Generative Models with Semantic Visual Priors"](https://arxiv.org/abs/2304.14986).*
 
 - **🗃️ Repository:** [github.com/michelecafagna26/vl-shap](https://github.com/michelecafagna26/vl-shap)
