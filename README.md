@@ -77,7 +77,7 @@ The visual explanation generation may take a while. Check the logs to keep track
 ## Hardware Requirements
 **The use of a GPU is strongly recommended.**
 Depending on VL-SHAP parameters and visual feature extraction method, it can require from a few seconds to a few minutes to generate and explanation on a GPU.
-This obviously depends also on the model you want to explain. For this reason the demo is currently limited to OFA-base and OFA-tiny.
+This obviously depends also on the model you want to explain. For this reason the demo is currently limited to 3 model: OFA-base and OFA-tiny and OFA-large.
 
 
 
